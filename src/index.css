@@ -197,28 +197,51 @@
   /* Make video slide title larger (not bold) on mobile */
   .video-slide-title {
     font-weight: 400 !important;
-    font-size: 3.5rem !important;
+    font-size: 4rem !important;
     line-height: 1.1 !important;
     text-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
     margin-top: -140px !important;
+  }
+  
+  /* Video description at bottom on mobile */
+  .video-description {
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    margin-top: 0 !important;
   }
 }
 
 /* Extra small screens - make even bigger */
 @media screen and (max-width: 430px) {
   .video-slide-title {
-    font-size: 3.75rem !important;
+    font-size: 4.5rem !important;
     font-weight: 400 !important;
     margin-top: -160px !important;
   }
+  
+  .video-description {
+    bottom: 15px !important;
+    font-size: 0.875rem !important;
+  }
 }
 
-/* Desktop - keep normal size */
+/* Desktop - bold and normal size */
 @media screen and (min-width: 768px) {
   .video-slide-title {
     font-size: 3rem !important;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     margin-top: 0 !important;
+  }
+  
+  .video-description {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
   }
 }
 
