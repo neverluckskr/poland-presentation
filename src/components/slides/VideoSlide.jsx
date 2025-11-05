@@ -14,11 +14,10 @@ export default function VideoSlide({ slide }) {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
-      <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-4 sm:mb-6 md:mb-8">
+      <h2 className="video-slide-title text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4 sm:mb-6 md:mb-8 drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontWeight: '900', WebkitTextStroke: '0.5px rgba(239, 68, 68, 0.3)', textStroke: '0.5px rgba(239, 68, 68, 0.3)' }}>
         {titleLines.map((line, index) => (
-          <span key={index}>
+          <span key={index} className="block">
             {line}
-            {index < titleLines.length - 1 && <br />}
           </span>
         ))}
       </h2>
