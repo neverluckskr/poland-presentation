@@ -18,15 +18,20 @@ export default function SettlementSlide({ slide }) {
           
           <div>
             <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-center">Українська діаспора</h3>
-            <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl list-none list-inside pl-0">
+            <div className="grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
               {slide.content.diaspora.map((item, index) => (
-                <li key={index} className="mb-2 xs:mb-2.5 sm:mb-3 md:mb-4 transition-all duration-300 hover:text-primary hover:font-semibold leading-relaxed">
-                  <strong className="block mb-0.5 xs:mb-1">{item.city}:</strong>
-                  <span className="block text-xs xs:text-sm opacity-90">{item.peak}</span>
-                  <span className="block text-xs xs:text-sm">{item.current}</span>
-                </li>
+                <div 
+                  key={index} 
+                  className="bg-white/6 p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl border border-dark-border transition-all duration-300 hover:border-primary/80 hover:bg-white/10 hover:shadow-[0_10px_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(239,68,68,0.1)] touch-manipulation active:scale-95"
+                >
+                  <strong className="block text-xs xs:text-sm sm:text-base md:text-lg mb-1 xs:mb-1.5 text-primary">{item.city}</strong>
+                  <div className="text-xs xs:text-sm leading-tight">
+                    <span className="block opacity-90 mb-0.5">{item.peak}</span>
+                    <span className="block">{item.current}</span>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
             <p className="text-xs xs:text-sm sm:text-base opacity-70 text-center mt-2 sm:mt-3 md:mt-4 px-2 sm:px-3 md:px-4 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.note}</p>
           </div>
         </div>
