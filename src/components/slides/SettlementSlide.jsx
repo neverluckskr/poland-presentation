@@ -25,9 +25,9 @@ export default function SettlementSlide({ slide }) {
                   className="bg-white/6 p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl border border-dark-border transition-all duration-300 hover:border-primary/80 hover:bg-white/10 hover:shadow-[0_10px_20px_rgba(0,0,0,0.3),inset_0_0_20px_rgba(239,68,68,0.1)] touch-manipulation active:scale-95"
                 >
                   <strong className="block text-xs xs:text-sm sm:text-base md:text-lg mb-1 xs:mb-1.5 text-primary">{item.city}</strong>
-                  <div className="text-xs xs:text-sm leading-tight">
-                    <span className="block opacity-90 mb-0.5">{item.peak}</span>
-                    <span className="block">{item.current}</span>
+                  <div className="text-xs xs:text-sm md:text-base lg:text-lg leading-tight font-medium">
+                    <span className="block opacity-90 mb-0.5 font-sans">{item.peak}</span>
+                    <span className="block font-sans">{item.current}</span>
                   </div>
                 </div>
               ))}

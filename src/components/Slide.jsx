@@ -46,7 +46,7 @@ export default function Slide({ slide, isActive, index }) {
     <article
       className={`
         absolute inset-0 m-auto rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[32px] border border-dark-border
-        p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 xl:p-14 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 overflow-auto
+        p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 xl:p-14 flex flex-col items-center justify-start md:justify-center gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 overflow-y-auto overflow-x-hidden
         transition-all duration-700 ease-out
         ${isActive 
           ? 'opacity-100 scale-100 translate-y-0 rotate-x-0 visible z-10' 
@@ -60,6 +60,7 @@ export default function Slide({ slide, isActive, index }) {
         boxShadow: isActive 
           ? '0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05) inset, 0 50px 100px -20px rgba(239, 68, 68, 0.15)'
           : 'none',
+        WebkitOverflowScrolling: 'touch',
       }}
       aria-label={`Слайд ${index + 1}: ${slide.title}`}
       aria-hidden={!isActive}

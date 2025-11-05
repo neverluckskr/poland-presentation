@@ -21,16 +21,32 @@ export default function SlideContainer({ slides, currentIndex, onSlideClick, isG
   const handleTouchMove = (e) => {
     touchEndX.current = e.touches[0].clientX;
     touchEndY.current = e.touches[0].clientY;
+    
+    // Если пользователь скроллит вертикально, не блокируем это
+    const deltaX = Math.abs(touchStartX.current - touchEndX.current);
+    const deltaY = Math.abs(touchStartY.current - touchEndY.current);
+    
+    // Если вертикальный скролл больше горизонтального, это скролл, не свайп
+    if (deltaY > deltaX && deltaY > 10) {
+      setIsSwiping(false);
+    }
   };
 
   const handleTouchEnd = () => {
-    if (!isSwiping) return;
+    if (!isSwiping) {
+      touchStartX.current = 0;
+      touchStartY.current = 0;
+      touchEndX.current = 0;
+      touchEndY.current = 0;
+      return;
+    }
     
     const deltaX = touchStartX.current - touchEndX.current;
     const deltaY = touchStartY.current - touchEndY.current;
     
     // Проверяем, что свайп был в основном горизонтальным (не вертикальным скроллом)
-    const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+    // Увеличиваем порог для вертикального движения, чтобы не мешать скроллу
+    const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaY) < 30;
     
     if (isHorizontalSwipe && Math.abs(deltaX) > minSwipeDistance) {
       if (deltaX > 0) {

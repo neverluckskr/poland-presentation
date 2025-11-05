@@ -112,7 +112,7 @@ function App() {
         />
         
         <main 
-          className="flex-1 p-2 sm:p-3 md:p-5 flex items-center justify-center overflow-hidden relative"
+          className="flex-1 p-2 sm:p-3 md:p-5 flex items-center justify-center overflow-hidden md:overflow-hidden relative"
           role="main"
           aria-label="Основний вміст презентації"
         >
