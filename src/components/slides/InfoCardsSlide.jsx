@@ -7,17 +7,17 @@ export default function InfoCardsSlide({ slide, isActive }) {
       <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-3 sm:mb-4 md:mb-6 lg:mb-8 drop-shadow-[0_0_20px_rgba(239,68,68,0.6)]">
         {slide.title}
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 items-center">
-        <div className="grid gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 xs:gap-3 sm:gap-4 md:gap-6 items-center">
+        <div className="grid gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 lg:gap-5">
           {slide.content.cards.map((card, index) => (
             <InfoCard key={index} card={card} isActive={isActive} />
           ))}
         </div>
-        <div>
+        <div className="hidden md:block">
           <img
             src={slide.content.image}
             alt={slide.content.imageAlt}
-            className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-2 border-dark-border shadow-2xl object-cover max-h-[200px] xs:max-h-[250px] sm:max-h-[300px] md:max-h-[400px] lg:max-h-[450px] transition-all duration-600 hover:scale-105 hover:-translate-y-2 hover:rotate-y-[5deg] hover:shadow-[0_30px_80px_-25px_rgba(239,68,68,0.6)] hover:border-primary/80"
+            className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-2 border-dark-border shadow-2xl object-cover max-h-[300px] sm:max-h-[400px] md:max-h-[450px] transition-all duration-600 hover:scale-105 hover:-translate-y-2 hover:rotate-y-[5deg] hover:shadow-[0_30px_80px_-25px_rgba(239,68,68,0.6)] hover:border-primary/80"
             style={{
               boxShadow: '0 20px 50px -20px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.12)',
             }}
