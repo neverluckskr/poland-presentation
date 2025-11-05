@@ -14,7 +14,7 @@ export default function VideoSlide({ slide }) {
 
   return (
     <div className="video-slide-container w-full h-full flex flex-col items-center justify-between relative px-4 py-8 md:py-12">
-      <h2 className="video-slide-title text-center text-5xl md:text-6xl lg:text-7xl font-bold text-primary drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)] mt-4 md:mt-8">
+      <h2 className="video-slide-title text-center text-7xl md:text-8xl lg:text-9xl font-black text-primary drop-shadow-[0_0_25px_rgba(239,68,68,1),0_4px_8px_rgba(0,0,0,0.8)] mt-4 md:mt-8" style={{ fontWeight: 900 }}>
         {titleLines.map((line, index) => (
           <span key={index} className="block">
             {line}
@@ -23,7 +23,7 @@ export default function VideoSlide({ slide }) {
       </h2>
 
       {embedUrl ? (
-        <div className="video-wrapper w-full max-w-sm md:max-w-4xl lg:max-w-6xl mx-auto">
+        <div className="video-wrapper w-full max-w-sm md:max-w-4xl lg:max-w-6xl mx-auto flex-shrink-0">
           <div 
             className="aspect-video rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden border-2 md:border-3 border-dark-border shadow-2xl" 
             style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 107, 122, 0.3)' }}
@@ -52,7 +52,7 @@ export default function VideoSlide({ slide }) {
       )}
 
       {slide.content?.description && (
-        <p className="video-description mt-4 md:mt-6 text-sm md:text-base lg:text-lg text-gray-300 text-center max-w-2xl md:max-w-4xl px-2">
+        <p className="video-description text-sm md:text-base lg:text-lg text-gray-300 text-center max-w-2xl md:max-w-4xl px-2 mb-4 md:mb-8">
           {slide.content.description}
         </p>
       )}
