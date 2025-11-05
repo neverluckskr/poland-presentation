@@ -13,33 +13,36 @@ export default function VideoSlide({ slide }) {
   const titleLines = slide.title ? slide.title.split('\n') : [];
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center relative">
-      <h2 className="video-slide-title text-center text-5xl xs:text-6xl sm:text-7xl md:text-5xl lg:text-6xl font-normal md:font-bold text-primary mb-4 sm:mb-6 md:mb-8 mt-[-120px] xs:mt-[-140px] sm:mt-[-160px] md:mt-0 lg:mt-0 drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)]">
+    <div className="video-slide-container w-full h-full flex flex-col items-center justify-center relative px-4 py-6 md:py-0">
+      <h2 className="video-slide-title text-center text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 md:mb-8 drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)]">
         {titleLines.map((line, index) => (
           <span key={index} className="block">
             {line}
           </span>
         ))}
       </h2>
+
       {embedUrl ? (
-        <div 
-          className="w-full max-w-6xl aspect-video rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 md:border-4 border-dark-border shadow-2xl mx-auto" 
-          style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 107, 122, 0.3)' }}
-          role="region"
-          aria-label="YouTube відео"
-        >
-          <iframe
-            width="100%"
-            height="100%"
-            src={embedUrl}
-            title={slide.title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="w-full h-full"
-            aria-label={`YouTube відео: ${slide.title}`}
-          />
+        <div className="video-wrapper w-full max-w-sm md:max-w-4xl lg:max-w-6xl mx-auto">
+          <div 
+            className="aspect-video rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden border-2 md:border-3 border-dark-border shadow-2xl" 
+            style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 107, 122, 0.3)' }}
+            role="region"
+            aria-label="YouTube відео"
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={embedUrl}
+              title={slide.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full"
+              aria-label={`YouTube відео: ${slide.title}`}
+            />
+          </div>
         </div>
       ) : (
         <div className="text-center text-2xl text-gray-400" role="alert">
@@ -47,8 +50,11 @@ export default function VideoSlide({ slide }) {
           {slide.content?.videoUrl && <p className="text-lg mt-4 opacity-70">{slide.content.videoUrl}</p>}
         </div>
       )}
+
       {slide.content?.description && (
-        <p className="video-description mt-6 text-xl text-gray-300 text-center max-w-4xl">{slide.content.description}</p>
+        <p className="video-description mt-4 md:mt-6 text-sm md:text-base lg:text-lg text-gray-300 text-center max-w-2xl md:max-w-4xl px-2">
+          {slide.content.description}
+        </p>
       )}
     </div>
   );
