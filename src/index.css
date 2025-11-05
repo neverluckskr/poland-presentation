@@ -192,20 +192,17 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Video slide optimization for all devices */
+/* Video slide optimization - spacing between elements */
 .video-slide-container {
-  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 768px) {
-  .video-slide-container {
-    padding-top: 1rem;
-    justify-content: flex-start;
-  }
-  
   .video-slide-title {
-    margin-top: 1.5rem;
     line-height: 1.1;
+    flex-shrink: 0;
   }
   
   .video-wrapper {
@@ -215,12 +212,7 @@
   .video-description {
     font-size: 0.875rem;
     padding: 0 1rem;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .video-slide-container {
-    justify-content: center;
+    flex-shrink: 0;
   }
 }
 

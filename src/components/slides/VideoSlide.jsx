@@ -13,8 +13,8 @@ export default function VideoSlide({ slide }) {
   const titleLines = slide.title ? slide.title.split('\n') : [];
 
   return (
-    <div className="video-slide-container w-full h-full flex flex-col items-center justify-center relative px-4 py-6 md:py-0">
-      <h2 className="video-slide-title text-center text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 md:mb-8 drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)]">
+    <div className="video-slide-container w-full h-full flex flex-col items-center justify-between relative px-4 py-8 md:py-12">
+      <h2 className="video-slide-title text-center text-5xl md:text-6xl lg:text-7xl font-bold text-primary drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)] mt-4 md:mt-8">
         {titleLines.map((line, index) => (
           <span key={index} className="block">
             {line}
