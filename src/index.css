@@ -180,6 +180,18 @@
   -webkit-touch-callout: none;
 }
 
+/* Swipe gestures for slides */
+.touch-pan-y {
+  touch-action: pan-y;
+}
+
+/* Prevent text selection during swipe */
+[role="main"] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* iPhone 14 Optimizations */
 /* iPhone 14 (390px) and iPhone 14 Pro (393px) */
 @media screen and (max-width: 430px) and (max-height: 932px) {

@@ -1,19 +1,68 @@
+import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Slide from './Slide';
 import GridView from './GridView';
 
-export default function SlideContainer({ slides, currentIndex, onSlideClick, isGridView, onCloseGrid }) {
+export default function SlideContainer({ slides, currentIndex, onSlideClick, isGridView, onCloseGrid, onNext, onPrev }) {
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const touchEndX = useRef(0);
+  const touchEndY = useRef(0);
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  const minSwipeDistance = 50; // Минимальное расстояние для распознавания свайпа
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    setIsSwiping(true);
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+    touchEndY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = () => {
+    if (!isSwiping) return;
+    
+    const deltaX = touchStartX.current - touchEndX.current;
+    const deltaY = touchStartY.current - touchEndY.current;
+    
+    // Проверяем, что свайп был в основном горизонтальным (не вертикальным скроллом)
+    const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+    
+    if (isHorizontalSwipe && Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX > 0) {
+        // Свайп влево - следующий слайд
+        onNext();
+      } else {
+        // Свайп вправо - предыдущий слайд
+        onPrev();
+      }
+    }
+    
+    setIsSwiping(false);
+    touchStartX.current = 0;
+    touchStartY.current = 0;
+    touchEndX.current = 0;
+    touchEndY.current = 0;
+  };
+
   if (isGridView) {
     return <GridView slides={slides} currentIndex={currentIndex} onSlideClick={onSlideClick} onClose={onCloseGrid} />;
   }
 
   return (
     <div 
-      className="w-full max-w-7xl h-full relative perspective-2000"
+      className="w-full max-w-7xl h-full relative perspective-2000 touch-pan-y"
       role="main"
       aria-label="Контейнер слайдів презентації"
       aria-live="polite"
       aria-atomic="true"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {slides.map((slide, index) => (
         <Slide
@@ -33,4 +82,6 @@ SlideContainer.propTypes = {
   onSlideClick: PropTypes.func.isRequired,
   isGridView: PropTypes.bool.isRequired,
   onCloseGrid: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  onPrev: PropTypes.func.isRequired,
 };

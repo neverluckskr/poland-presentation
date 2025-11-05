@@ -122,6 +122,8 @@ function App() {
             onSlideClick={goToSlide}
             isGridView={isGridView}
             onCloseGrid={toggleGrid}
+            onNext={goToNext}
+            onPrev={goToPrev}
           />
         </main>
 
