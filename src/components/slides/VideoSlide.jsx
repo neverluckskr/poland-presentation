@@ -14,7 +14,7 @@ export default function VideoSlide({ slide }) {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
-      <h2 className="video-slide-title text-center text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-primary mb-4 sm:mb-6 md:mb-8 mt-[-40px] xs:mt-[-50px] sm:mt-[-60px] md:mt-0 drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)]" style={{ fontWeight: '900', WebkitTextStroke: '0.5px rgba(239, 68, 68, 0.3)', textStroke: '0.5px rgba(239, 68, 68, 0.3)' }}>
+      <h2 className="video-slide-title text-center text-5xl xs:text-6xl sm:text-7xl md:text-5xl lg:text-6xl font-normal text-primary mb-4 sm:mb-6 md:mb-8 mt-[-120px] xs:mt-[-140px] sm:mt-[-160px] md:mt-0 lg:mt-0 drop-shadow-[0_0_15px_rgba(239,68,68,0.8),0_2px_4px_rgba(0,0,0,0.5)]">
         {titleLines.map((line, index) => (
           <span key={index} className="block">
             {line}

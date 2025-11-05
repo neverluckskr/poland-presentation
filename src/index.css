@@ -194,22 +194,31 @@
 
 /* Video slide text optimization for mobile */
 @media screen and (max-width: 768px) {
-  /* Make video slide title extra bold and larger on mobile */
+  /* Make video slide title larger (not bold) on mobile */
   .video-slide-title {
-    font-weight: 900 !important;
-    font-size: 2.5rem !important;
-    line-height: 1.2 !important;
-    -webkit-text-stroke: 0.5px rgba(239, 68, 68, 0.4) !important;
+    font-weight: 400 !important;
+    font-size: 3.5rem !important;
+    line-height: 1.1 !important;
     text-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
-    margin-top: -40px !important;
+    margin-top: -140px !important;
   }
 }
 
 /* Extra small screens - make even bigger */
 @media screen and (max-width: 430px) {
   .video-slide-title {
-    font-size: 2.75rem !important;
-    margin-top: -50px !important;
+    font-size: 3.75rem !important;
+    font-weight: 400 !important;
+    margin-top: -160px !important;
+  }
+}
+
+/* Desktop - keep normal size */
+@media screen and (min-width: 768px) {
+  .video-slide-title {
+    font-size: 3rem !important;
+    font-weight: 400 !important;
+    margin-top: 0 !important;
   }
 }
 
