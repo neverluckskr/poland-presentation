@@ -82,10 +82,10 @@ export default function GovernanceSlide({ slide, isActive }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-9 items-center">
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 sm:gap-6">
-            <div className="bg-primary/12 border-2 border-primary/45 p-5 sm:p-7 rounded-xl sm:rounded-2xl col-span-full">
-              <h3 className="text-base sm:text-lg text-primary mb-2">🏛️ Форма правління</h3>
-              <p className="text-xl sm:text-2xl font-extrabold mb-2">{slide.content.form}</p>
-              <p className="text-base sm:text-lg leading-relaxed opacity-95 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.form} — змішана система з розподілом влади між президентом, урядом та парламентом.</p>
+            <div className="bg-primary/12 border-2 border-primary/45 p-3 xs:p-4 sm:p-5 md:p-7 rounded-lg sm:rounded-xl md:rounded-2xl col-span-full">
+              <h3 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 xs:mb-1.5 sm:mb-2">🏛️ Форма правління</h3>
+              <p className="text-base xs:text-lg sm:text-xl md:text-2xl font-extrabold mb-1 xs:mb-1.5 sm:mb-2">{slide.content.form}</p>
+              <p className="text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed opacity-95 transition-all duration-300 hover:text-primary hover:font-semibold">Змішана система з розподілом влади між президентом, урядом та парламентом.</p>
             </div>
             
             <div 

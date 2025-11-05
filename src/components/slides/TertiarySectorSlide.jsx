@@ -7,7 +7,7 @@ export default function TertiarySectorSlide({ slide }) {
           <p className="text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4 md:mb-5 lg:mb-7 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.description}</p>
           <div>
             <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4">Основні напрями</h3>
-            <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl columns-1 sm:columns-2 gap-3 sm:gap-5 md:gap-6 lg:gap-8 list-none">
+            <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl sm:columns-2 gap-3 sm:gap-5 md:gap-6 lg:gap-8 list-none">
               {slide.content.services.map((service, index) => (
                 <li key={index} className="pl-6 xs:pl-8 sm:pl-10 py-1.5 xs:py-2 sm:py-3 relative transition-all duration-300 hover:translate-x-2 hover:text-primary hover:font-semibold">
                   <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2.5 xs:w-3 h-2.5 xs:h-3 rounded-full bg-primary shadow-[0_0_15px_rgb(239,68,68)]" />

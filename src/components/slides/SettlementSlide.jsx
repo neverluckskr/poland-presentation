@@ -20,8 +20,10 @@ export default function SettlementSlide({ slide }) {
             <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-center">Українська діаспора</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl list-none list-inside pl-0">
               {slide.content.diaspora.map((item, index) => (
-                <li key={index} className="mb-1 sm:mb-1.5 md:mb-2 transition-all duration-300 hover:text-primary hover:font-semibold">
-                  <strong>{item.city}:</strong> {item.peak} → {item.current}
+                <li key={index} className="mb-2 xs:mb-2.5 sm:mb-3 md:mb-4 transition-all duration-300 hover:text-primary hover:font-semibold leading-relaxed">
+                  <strong className="block mb-0.5 xs:mb-1">{item.city}:</strong>
+                  <span className="block text-xs xs:text-sm opacity-90">{item.peak}</span>
+                  <span className="block text-xs xs:text-sm">{item.current}</span>
                 </li>
               ))}
             </ul>

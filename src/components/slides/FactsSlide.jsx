@@ -8,7 +8,8 @@ export default function FactsSlide({ slide }) {
           <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl list-none space-y-2 sm:space-y-3 md:space-y-4">
             {slide.content.historical.map((fact, index) => (
               <li key={index} className="mb-2 sm:mb-3 md:mb-4 leading-relaxed transition-all duration-300 hover:text-primary hover:font-semibold">
-                <strong className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl">{fact.title}:</strong> <span className="text-gray-300">{fact.text}</span>
+                <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl block mb-1">{fact.title}:</strong> 
+                <span className="text-gray-300 text-xs xs:text-sm sm:text-base md:text-lg block">{fact.text}</span>
               </li>
             ))}
           </ul>
@@ -29,7 +30,8 @@ export default function FactsSlide({ slide }) {
           <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl list-none space-y-2 sm:space-y-3 md:space-y-4">
             {slide.content.cultural.map((fact, index) => (
               <li key={index} className="mb-2 sm:mb-3 md:mb-4 leading-relaxed transition-all duration-300 hover:text-primary hover:font-semibold">
-                <strong className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl">{fact.title}:</strong> <span className="text-gray-300">{fact.text}</span>
+                <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl block mb-1">{fact.title}:</strong> 
+                <span className="text-gray-300 text-xs xs:text-sm sm:text-base md:text-lg block">{fact.text}</span>
               </li>
             ))}
           </ul>
@@ -40,7 +42,8 @@ export default function FactsSlide({ slide }) {
           <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl list-none space-y-2 sm:space-y-3 md:space-y-4">
             {slide.content.geographical.map((fact, index) => (
               <li key={index} className="mb-2 sm:mb-3 md:mb-4 leading-relaxed transition-all duration-300 hover:text-primary hover:font-semibold">
-                <strong className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl">{fact.title}:</strong> <span className="text-gray-300">{fact.text}</span>
+                <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl block mb-1">{fact.title}:</strong> 
+                <span className="text-gray-300 text-xs xs:text-sm sm:text-base md:text-lg block">{fact.text}</span>
               </li>
             ))}
           </ul>
@@ -61,7 +64,8 @@ export default function FactsSlide({ slide }) {
           <ul className="text-xs xs:text-sm sm:text-base list-none space-y-2 sm:space-y-3 md:space-y-4">
             {slide.content.social.map((fact, index) => (
               <li key={index} className="mb-2 sm:mb-3 md:mb-4 leading-relaxed transition-all duration-300 hover:text-primary hover:font-semibold">
-                <strong className="text-xs xs:text-sm sm:text-base md:text-lg">{fact.title}:</strong> <span className="text-gray-300">{fact.text}</span>
+                <strong className="text-xs xs:text-sm sm:text-base md:text-lg block mb-0.5">{fact.title}:</strong> 
+                <span className="text-gray-300 text-xs xs:text-sm sm:text-base block">{fact.text}</span>
               </li>
             ))}
           </ul>

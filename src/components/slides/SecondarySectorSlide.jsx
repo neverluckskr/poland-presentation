@@ -8,12 +8,16 @@ export default function SecondarySectorSlide({ slide }) {
           <div>
             <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-2 sm:mb-3">Основні галузі</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
-              {slide.content.industries.map((industry, index) => (
-                <li key={index} className="pl-5 xs:pl-6 sm:pl-8 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:translate-x-2 hover:text-primary hover:font-semibold">
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 rounded-full bg-primary shadow-[0_0_15px_rgb(239,68,68)]" />
-                  <strong>{industry.split(':')[0]}:</strong> {industry.split(':')[1]}
-                </li>
-              ))}
+              {slide.content.industries.map((industry, index) => {
+                const parts = industry.split(':');
+                return (
+                  <li key={index} className="pl-5 xs:pl-6 sm:pl-8 py-2 xs:py-2.5 sm:py-3 relative transition-all duration-300 hover:translate-x-2 hover:text-primary hover:font-semibold">
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-3 xs:w-3.5 sm:w-4 h-3 xs:h-3.5 sm:h-4 rounded-full bg-primary shadow-[0_0_15px_rgb(239,68,68)]" />
+                    <strong className="block mb-0.5 xs:mb-1">{parts[0]}:</strong>
+                    <span className="block">{parts[1]}</span>
+                  </li>
+                );
+              })}
             </ul>
             <p className="text-xs xs:text-sm sm:text-base mt-2 sm:mt-3 opacity-90 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.note}</p>
           </div>

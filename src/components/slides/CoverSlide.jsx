@@ -19,7 +19,7 @@ export default function CoverSlide({ slide, isActive }) {
           <hr className="w-3/5 mx-auto my-4 xs:my-6 sm:my-8 border-none border-t-2 border-white/25 rounded-full" aria-hidden="true" />
 
           <p className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 xs:mb-2">Матеріали підготували:</p>
-          <p className="mt-1 xs:mt-2 text-sm xs:text-base sm:text-lg opacity-95">{slide.content.materials}</p>
+          <p className="mt-1 xs:mt-2 text-xs xs:text-sm sm:text-base md:text-lg opacity-95 leading-tight">{slide.content.materials}</p>
 
           <p className="mt-4 xs:mt-6 sm:mt-8 text-4xl xs:text-5xl sm:text-6xl" style={{ animation: 'heartBeat 1.5s ease-in-out infinite' }} aria-hidden="true">♥</p>
 
