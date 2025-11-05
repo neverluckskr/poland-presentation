@@ -8,18 +8,18 @@ export default function CoverSlide({ slide, isActive }) {
         <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-black text-white mb-3 xs:mb-4 animate-float drop-shadow-[0_5px_20px_rgba(255,107,122,0.5)]">
           {slide.title}
         </h1>
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl font-extrabold text-primary mb-6 xs:mb-8 sm:mb-10 md:mb-12 drop-shadow-[0_0_25px_rgba(239,68,68,0.8)] animate-pulse-slow">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-black text-primary mb-6 xs:mb-8 sm:mb-10 md:mb-12 drop-shadow-[0_0_25px_rgba(239,68,68,0.8)] animate-pulse-slow">
           {slide.subtitle}
         </h2>
 
         <div className="text-center mt-6 xs:mt-8 sm:mt-10 md:mt-12">
-          <p className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 xs:mb-2">Презентацію розробив:</p>
-          <p className="mt-1 xs:mt-2 text-base xs:text-lg sm:text-xl opacity-95">{slide.content.developer}</p>
+          <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black mb-1 xs:mb-2">Презентацію розробив:</p>
+          <p className="mt-1 xs:mt-2 text-base xs:text-lg sm:text-xl md:text-2xl font-bold opacity-95">{slide.content.developer}</p>
 
           <hr className="w-3/5 mx-auto my-4 xs:my-6 sm:my-8 border-none border-t-2 border-white/25 rounded-full" aria-hidden="true" />
 
-          <p className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 xs:mb-2">Матеріали підготували:</p>
-          <p className="mt-1 xs:mt-2 text-xs xs:text-sm sm:text-base md:text-lg opacity-95 leading-tight">{slide.content.materials}</p>
+          <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-black mb-1 xs:mb-2">Матеріали підготували:</p>
+          <p className="mt-1 xs:mt-2 text-xs xs:text-sm sm:text-base md:text-lg font-semibold opacity-95 leading-tight">{slide.content.materials}</p>
 
           <p className="mt-4 xs:mt-6 sm:mt-8 text-4xl xs:text-5xl sm:text-6xl" style={{ animation: 'heartBeat 1.5s ease-in-out infinite' }} aria-hidden="true">♥</p>
 

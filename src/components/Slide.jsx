@@ -42,11 +42,15 @@ export default function Slide({ slide, isActive, index }) {
 
   const isSettlementSlide = slide.type === 'settlement';
   
+  // Слайды с малым количеством информации - центрируем и делаем жирнее
+  const isSimpleSlide = slide.type === 'cover' || slide.type === 'info-cards';
+  
   return (
     <article
+      data-simple-slide={isSimpleSlide}
       className={`
         absolute inset-0 m-auto rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[32px] border border-dark-border
-        p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 xl:p-14 flex flex-col items-center justify-start md:justify-center gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 overflow-y-auto overflow-x-hidden
+        p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 xl:p-14 flex flex-col items-center ${isSimpleSlide ? 'justify-center' : 'justify-start md:justify-center'} gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 ${isSimpleSlide ? 'overflow-hidden' : 'overflow-y-auto'} overflow-x-hidden
         transition-all duration-700 ease-out
         ${isActive 
           ? 'opacity-100 scale-100 translate-y-0 rotate-x-0 visible z-10' 
