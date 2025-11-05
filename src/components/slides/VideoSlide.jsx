@@ -14,7 +14,7 @@ export default function VideoSlide({ slide }) {
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
-      <h2 className="text-center text-6xl font-extrabold text-primary mb-8">
+      <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-4 sm:mb-6 md:mb-8">
         {titleLines.map((line, index) => (
           <span key={index}>
             {line}
@@ -24,7 +24,7 @@ export default function VideoSlide({ slide }) {
       </h2>
       {embedUrl ? (
         <div 
-          className="w-full max-w-6xl aspect-video rounded-3xl overflow-hidden border-4 border-dark-border shadow-2xl" 
+          className="w-full max-w-6xl aspect-video rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 md:border-4 border-dark-border shadow-2xl" 
           style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 107, 122, 0.3)' }}
           role="region"
           aria-label="YouTube відео"

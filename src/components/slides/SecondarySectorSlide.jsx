@@ -1,7 +1,7 @@
 export default function SecondarySectorSlide({ slide }) {
   return (
     <div className="w-full pr-20">
-      <h2 className="text-center text-6xl font-extrabold text-primary mb-6">{slide.title}</h2>
+      <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-3 sm:mb-4 md:mb-6 lg:mb-8">{slide.title}</h2>
       <div className="grid grid-cols-2 gap-9 items-center">
         <div>
           <p className="text-xl leading-relaxed mb-5 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.description}</p>

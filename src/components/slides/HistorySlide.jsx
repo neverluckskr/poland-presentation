@@ -1,7 +1,7 @@
 export default function HistorySlide({ slide }) {
   return (
     <div className="w-full">
-      <h2 className="text-center text-6xl font-extrabold text-primary mb-8">{slide.title}</h2>
+      <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-3 sm:mb-4 md:mb-6 lg:mb-8">{slide.title}</h2>
       <div className="grid grid-cols-2 gap-9 items-center" style={{ gridTemplateColumns: '1fr 1fr' }}>
         <div className="order-2 grid gap-7">
           {slide.content.periods.map((period, index) => (

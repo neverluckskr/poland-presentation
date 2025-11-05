@@ -5,7 +5,7 @@ export default function GovernanceSlide({ slide, isActive }) {
   if (slide.type === 'structure') {
     return (
       <div className="w-full">
-        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-4 sm:mb-6 md:mb-8">{slide.title}</h2>
+        <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-3 sm:mb-4 md:mb-6 lg:mb-8">{slide.title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 items-center">
           <div className="grid gap-6">
             <div className="bg-primary/12 border-2 border-primary/45 text-center p-4 rounded-2xl">
@@ -78,7 +78,7 @@ export default function GovernanceSlide({ slide, isActive }) {
 
   return (
     <div className="w-full">
-      <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-4 sm:mb-6 md:mb-8">{slide.title}</h2>
+      <h2 className="text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-3 sm:mb-4 md:mb-6 lg:mb-8">{slide.title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-9 items-center">
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 sm:gap-6">

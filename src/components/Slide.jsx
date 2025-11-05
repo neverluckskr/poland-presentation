@@ -45,8 +45,8 @@ export default function Slide({ slide, isActive, index }) {
   return (
     <article
       className={`
-        absolute inset-0 m-auto rounded-[32px] border border-dark-border
-        p-4 sm:p-8 md:p-14 flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 overflow-auto
+        absolute inset-0 m-auto rounded-2xl sm:rounded-3xl md:rounded-[32px] border border-dark-border
+        p-3 xs:p-4 sm:p-6 md:p-8 lg:p-14 flex flex-col items-center justify-center gap-2 xs:gap-3 sm:gap-4 md:gap-6 lg:gap-8 overflow-auto
         transition-all duration-700 ease-out
         ${isActive 
           ? 'opacity-100 scale-100 translate-y-0 rotate-x-0 visible z-10' 

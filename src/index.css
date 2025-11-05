@@ -179,3 +179,123 @@
   touch-action: manipulation;
   -webkit-touch-callout: none;
 }
+
+/* iPhone 14 Optimizations */
+/* iPhone 14 (390px) and iPhone 14 Pro (393px) */
+@media screen and (max-width: 430px) and (max-height: 932px) {
+  /* Optimize slide padding for iPhone */
+  article {
+    padding: 1rem !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Smaller headings */
+  h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  /* Smaller text */
+  p, li, span {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Compact cards */
+  [class*="bg-white/6"] {
+    padding: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Smaller images */
+  img {
+    max-height: 250px !important;
+  }
+  
+  /* Compact topbar */
+  header {
+    padding: 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Compact footer */
+  footer {
+    padding: 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Better spacing for touch */
+  .grid {
+    gap: 0.5rem !important;
+  }
+  
+  /* Safe area insets for iPhone notch */
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
+
+/* iPhone 14 Pro Max (430px) specific */
+@media screen and (min-width: 428px) and (max-width: 430px) and (max-height: 932px) {
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  p, li, span {
+    font-size: 0.9375rem !important;
+  }
+  
+  img {
+    max-height: 280px !important;
+  }
+}
+
+/* Landscape iPhone optimization */
+@media screen and (max-height: 430px) and (orientation: landscape) {
+  article {
+    padding: 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  p, li {
+    font-size: 0.8125rem !important;
+  }
+  
+  img {
+    max-height: 180px !important;
+  }
+  
+  header, footer {
+    padding: 0.375rem !important;
+    font-size: 0.6875rem !important;
+  }
+}
+
+/* Prevent text size adjustment on iOS */
+@supports (-webkit-touch-callout: none) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* Safe area support for iPhone X and newer */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
