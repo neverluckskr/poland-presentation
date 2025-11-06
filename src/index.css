@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ============================================
-   ОБЩИЕ СТИЛИ (применяются везде)
-   ============================================ */
-
 @layer base {
   * {
     box-sizing: border-box;
@@ -189,48 +185,6 @@
   touch-action: pan-y;
 }
 
-/* Prevent text selection during swipe */
-[role="main"] {
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Video slide optimization - HUGE title, centered video, description right under */
-.video-slide-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.video-slide-title {
-  font-weight: 900 !important;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-
-/* Prevent text size adjustment on iOS */
-@supports (-webkit-touch-callout: none) {
-  html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
-  
-  body {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-  }
-}
-
-/* Safe area support for iPhone X and newer */
-@supports (padding: max(0px)) {
-  body {
-    padding-left: max(0px, env(safe-area-inset-left));
-    padding-right: max(0px, env(safe-area-inset-right));
-    padding-top: max(0px, env(safe-area-inset-top));
-    padding-bottom: max(0px, env(safe-area-inset-bottom));
-  }
-}
-
 /* ============================================
    МОБИЛЬНЫЕ УСТРОЙСТВА (max-width: 768px)
    Здесь меняй стили только для телефонов
@@ -277,8 +231,28 @@
   article:not([data-simple-slide="true"]) .grid {
     gap: 0.5rem !important;
   }
-  
-  /* Video slide title for mobile */
+}
+
+/* Prevent text selection during swipe */
+[role="main"] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Video slide optimization - HUGE title, centered video, description right under */
+.video-slide-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-slide-title {
+  font-weight: 900 !important;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
   .video-slide-title {
     font-size: 8rem !important;
     line-height: 0.9 !important;
@@ -297,7 +271,6 @@
   }
 }
 
-/* Extra small phones - use viewport width for maximum size */
 @media screen and (max-width: 430px) {
   .video-slide-title {
     font-size: 7rem !important;
@@ -312,6 +285,19 @@
     line-height: 0.85 !important;
     max-width: 100vw;
     word-break: break-word;
+  }
+}
+
+/* ============================================
+   КОМПЬЮТЕРЫ (min-width: 769px)
+   Здесь меняй стили только для компьютеров
+   ============================================ */
+
+@media screen and (min-width: 769px) {
+  .video-slide-title {
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
   }
 }
 
@@ -444,174 +430,25 @@
   }
 }
 
-/* ============================================
-   КОМПЬЮТЕРЫ (min-width: 769px)
-   Здесь меняй стили только для компьютеров
-   ============================================ */
-
-@media screen and (min-width: 769px) {
-  /* Video slide title */
-  .video-slide-title {
-    font-size: 3.5rem !important;
-    font-weight: 700 !important;
-    line-height: 1.2 !important;
+/* Prevent text size adjustment on iOS */
+@supports (-webkit-touch-callout: none) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   
-  /* Увеличенные размеры текста для компьютеров */
-  /* Заголовки */
-  h1 {
-    font-size: 4rem !important;
-    line-height: 1.2 !important;
-  }
-  
-  h2:not(.video-slide-title) {
-    font-size: 3.5rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 1.5rem !important;
-  }
-  
-  h3 {
-    font-size: 2.25rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  h4 {
-    font-size: 1.75rem !important;
-    line-height: 1.4 !important;
-  }
-  
-  /* Основной текст */
-  p {
-    font-size: 1.25rem !important;
-    line-height: 1.7 !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  /* Списки */
-  li {
-    font-size: 1.25rem !important;
-    line-height: 1.7 !important;
-    margin-bottom: 0.75rem !important;
-  }
-  
-  /* Обычный текст */
-  span:not([class*="text-"]) {
-    font-size: 1.25rem !important;
-    line-height: 1.7 !important;
-  }
-  
-  /* Увеличенные отступы для карточек */
-  article {
-    padding: 2rem !important;
-    gap: 1.5rem !important;
-  }
-  
-  /* Увеличенные отступы в grid */
-  .grid {
-    gap: 1.5rem !important;
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
 
-/* ============================================
-   КОМПЬЮТЕРЫ - НЕПОЛНОЭКРАННЫЙ РЕЖИМ (не F11)
-   Весь текст виден, картинки меньше
-   ============================================ */
-
-@media screen and (min-width: 769px) {
-  body:not(.fullscreen-mode) article {
-    /* Уменьшенные отступы для лучшей видимости текста */
-    padding: 1.5rem !important;
-    gap: 1rem !important;
-    max-height: 85vh !important;
-    overflow-y: auto !important;
-  }
-  
-  body:not(.fullscreen-mode) article h2:not(.video-slide-title) {
-    font-size: 2.5rem !important;
-    margin-bottom: 1rem !important;
-    margin-top: 0.5rem !important;
-  }
-  
-  body:not(.fullscreen-mode) article h3 {
-    font-size: 1.75rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-  
-  body:not(.fullscreen-mode) article p {
-    font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 0.75rem !important;
-  }
-  
-  body:not(.fullscreen-mode) article li {
-    font-size: 1.1rem !important;
-    line-height: 1.6 !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  /* Картинки меньше в неполноэкранном режиме */
-  body:not(.fullscreen-mode) article img {
-    max-height: 300px !important;
-    max-width: 100% !important;
-  }
-  
-  body:not(.fullscreen-mode) .grid {
-    gap: 1rem !important;
-  }
-  
-  /* Исправление для слайда "Вторинний сектор економіки" */
-  body:not(.fullscreen-mode) article[data-simple-slide="false"] {
-    padding-top: 1rem !important;
-  }
-  
-  body:not(.fullscreen-mode) article[data-simple-slide="false"] h2 {
-    margin-top: 0.75rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-}
-
-/* ============================================
-   КОМПЬЮТЕРЫ - ПОЛНОЭКРАННЫЙ РЕЖИМ (F11)
-   Большие картинки и текст
-   ============================================ */
-
-@media screen and (min-width: 769px) {
-  body.fullscreen-mode article {
-    padding: 2.5rem !important;
-    gap: 2rem !important;
-    max-height: 90vh !important;
-  }
-  
-  body.fullscreen-mode article h2:not(.video-slide-title) {
-    font-size: 4rem !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  body.fullscreen-mode article h3 {
-    font-size: 2.5rem !important;
-    margin-bottom: 1.25rem !important;
-  }
-  
-  body.fullscreen-mode article p {
-    font-size: 1.5rem !important;
-    line-height: 1.8 !important;
-    margin-bottom: 1.25rem !important;
-  }
-  
-  body.fullscreen-mode article li {
-    font-size: 1.5rem !important;
-    line-height: 1.8 !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  /* Картинки больше в полноэкранном режиме */
-  body.fullscreen-mode article img {
-    max-height: 550px !important;
-    max-width: 100% !important;
-  }
-  
-  body.fullscreen-mode .grid {
-    gap: 2rem !important;
+/* Safe area support for iPhone X and newer */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
   }
 }
