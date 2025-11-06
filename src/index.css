@@ -231,6 +231,30 @@
   article:not([data-simple-slide="true"]) .grid {
     gap: 0.5rem !important;
   }
+  
+  /* ============================================
+     ИСПРАВЛЕНИЕ ПЕРЕКРЫТИЯ ЗАГОЛОВКА ЗНАЧКОМ АВТОРА
+     Для конкретных слайдов на мобильных устройствах
+     ============================================ */
+  
+  /* Географічне положення, Природні умови, Природні ресурси, 
+     Демографія, Державний лад, Вторинний сектор, 
+     Ключові сектори послуг, Цікаві факти */
+  
+  /* Уменьшаем размер заголовка и сдвигаем влево только для нужных слайдов */
+  article[data-mobile-fix="true"] h2 {
+    font-size: 1.25rem !important;
+    padding-right: 3rem !important;
+    text-align: left !important;
+    margin-left: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Подвинуть контент вниз */
+  article[data-mobile-fix="true"] > div {
+    margin-top: 0.75rem !important;
+  }
 }
 
 /* Prevent text selection during swipe */

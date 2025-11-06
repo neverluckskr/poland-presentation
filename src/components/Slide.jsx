@@ -45,9 +45,23 @@ export default function Slide({ slide, isActive, index }) {
   // Слайды с малым количеством информации - центрируем и делаем жирнее
   const isSimpleSlide = slide.type === 'cover' || slide.type === 'info-cards';
   
+  // Слайды, которые нужно исправить на мобильных (заголовок не должен перекрывать значок автора)
+  const needsMobileFix = [
+    'geography',
+    'natural-conditions',
+    'natural-resources',
+    'demographics',
+    'governance',
+    'structure',
+    'secondary-sector',
+    'services-detail',
+    'facts'
+  ].includes(slide.type);
+  
   return (
     <article
       data-simple-slide={isSimpleSlide}
+      data-mobile-fix={needsMobileFix}
       className={`
         absolute inset-0 m-auto rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[32px] border border-dark-border
         p-2 xs:p-3 sm:p-4 md:p-6 lg:p-8 xl:p-14 flex flex-col items-center ${isSimpleSlide ? 'justify-center' : 'justify-start md:justify-center'} gap-1.5 xs:gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8 ${isSimpleSlide ? 'overflow-hidden' : 'overflow-y-auto'} overflow-x-hidden
