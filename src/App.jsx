@@ -5,8 +5,6 @@ import DesktopApp from './components/DesktopApp';
 function App() {
   const { isMobile, isTablet } = useDeviceType();
   
-  // Для мобильных и планшетов показываем мобильную версию
-  // Для десктопов - десктопную версию
   if (isMobile || isTablet) {
     return <MobileApp />;
   }

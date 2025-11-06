@@ -1,4 +1,3 @@
-// Версия приложения для компьютеров
 import { useState, useEffect, useCallback } from 'react';
 import Topbar from './Topbar';
 import SlideContainer from './SlideContainer';

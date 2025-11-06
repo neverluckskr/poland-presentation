@@ -1,15 +1,13 @@
-// ===== ENHANCED SNOWFLAKES EFFECT =====
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Визначаємо продуктивність пристрою
 const isLowPerformance = navigator.hardwareConcurrency <= 4 || 
                         (performance.memory && performance.memory.jsHeapSizeLimit < 2000000000);
 
 const snowflakes = [];
-const snowflakeCount = isLowPerformance ? 10 : 40; // Менше сніжинок на слабких ПК
+const snowflakeCount = isLowPerformance ? 10 : 40;
 
 class Snowflake {
   constructor() {
@@ -24,9 +22,9 @@ class Snowflake {
     this.speedX = Math.random() * 0.6 - 0.3;
     this.opacity = Math.random() * 0.7 + 0.3;
     this.rotation = Math.random() * 360;
-    this.rotationSpeed = isLowPerformance ? 0 : Math.random() * 2.5 - 1.25; // Без обертання на слабких ПК
+    this.rotationSpeed = isLowPerformance ? 0 : Math.random() * 2.5 - 1.25;
     this.wobble = Math.random() * 2;
-    this.wobbleSpeed = isLowPerformance ? 0 : Math.random() * 0.05; // Без коливань на слабких ПК
+    this.wobbleSpeed = isLowPerformance ? 0 : Math.random() * 0.05;
   }
 
   update() {
@@ -57,7 +55,6 @@ class Snowflake {
       ctx.rotate((this.rotation * Math.PI) / 180);
     }
     
-    // Простий круг
     ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
     ctx.beginPath();
     ctx.arc(0, 0, this.size, 0, Math.PI * 2);
@@ -85,7 +82,6 @@ function animateSnowflakes() {
 initSnowflakes();
 animateSnowflakes();
 
-// Оптимізований resize з throttling
 let resizeTimeout;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimeout);
@@ -95,7 +91,6 @@ window.addEventListener('resize', () => {
   }, 250);
 });
 
-// ===== LOADING SCREEN =====
 window.addEventListener('load', () => {
   const loadingScreen = document.getElementById('loadingScreen');
   const loadingProgress = document.getElementById('loadingProgress');
@@ -117,7 +112,6 @@ window.addEventListener('load', () => {
   }, 100);
 });
 
-// ===== TOAST NOTIFICATIONS =====
 function showToast(message, type = 'info') {
   const container = document.getElementById('toastContainer');
   const toast = document.createElement('div');
@@ -145,7 +139,6 @@ function showToast(message, type = 'info') {
   }, 3000);
 }
 
-// ===== ANIMATED NUMBERS =====
 function animateNumber(el) {
   const target = parseFloat(el.dataset.target);
   const duration = 2500;
@@ -168,7 +161,6 @@ function animateNumber(el) {
   }, 16);
 }
 
-// ===== ENHANCED PRESENTATION LOGIC =====
 document.addEventListener('DOMContentLoaded', () => {
   const slides = Array.from(document.querySelectorAll('.slide'));
   const grid = document.getElementById('grid');
@@ -191,21 +183,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let autoPlayInterval = null;
   let isDarkTheme = true;
 
-  // Initialize
   totalSlidesEl.textContent = slides.length;
   
-  // Оптимізація для слабких комп'ютерів
   if (isLowPerformance) {
-    // Зменшуємо кількість сніжинок
     const particleCanvas = document.getElementById('particles');
     if (particleCanvas) {
       particleCanvas.style.opacity = '0.15';
     }
-    // Вимикаємо деякі анімації
     document.body.classList.add('performance-mode');
   }
 
-  // Update clock
   function updateClock() {
     const now = new Date();
     const time = now.toLocaleTimeString('uk-UA', { 
@@ -217,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // Update UI
   function updateUI() {
     slides.forEach((slide, index) => {
       slide.classList.toggle('active', index === currentIndex);
@@ -235,7 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBar.style.width = `${progressPercentage}%`;
     location.hash = `#${currentIndex + 1}`;
     
-    // Update button states
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === slides.length - 1;
   }
@@ -312,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Fullscreen toggle
   function toggleFullscreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().then(() => {
@@ -325,14 +309,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Theme toggle
   function toggleTheme() {
     isDarkTheme = !isDarkTheme;
     document.body.classList.toggle('light-theme', !isDarkTheme);
     showToast(isDarkTheme ? 'Темна тема' : 'Світла тема', 'success');
   }
 
-  // Auto-play functionality
   function toggleAutoPlay() {
     isAutoPlay = !isAutoPlay;
     
@@ -351,7 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Event Listeners
   prevBtn.addEventListener('click', showPrev);
   nextBtn.addEventListener('click', showNext);
   gridBtn.addEventListener('click', toggleGrid);
@@ -362,7 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => window.print(), 500);
   });
 
-  // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === ' ') {
       e.preventDefault();
@@ -407,7 +387,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Touch/Swipe support
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -429,7 +408,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Mouse wheel navigation
   let wheelTimeout;
   document.addEventListener('wheel', (e) => {
     clearTimeout(wheelTimeout);
@@ -442,7 +420,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   }, { passive: true });
 
-  // Handle hash changes
   function handleHashChange() {
     const hash = parseInt(location.hash.substring(1));
     const initialIndex = (isNaN(hash) || hash < 1 || hash > slides.length) ? 0 : hash - 1;
@@ -453,7 +430,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('hashchange', handleHashChange);
 
-  // Visibility change - pause autoplay when tab is hidden
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && isAutoPlay) {
       clearInterval(autoPlayInterval);
@@ -468,18 +444,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Initial load
   handleHashChange();
   if (!location.hash) {
     showSlide(0);
   }
 
-  // Welcome message
   setTimeout(() => {
     showToast('🇵🇱 Ласкаво просимо до презентації про Польщу!', 'success');
   }, 1500);
 
-  // Easter egg - Konami code
   const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
   let konamiIndex = 0;
 
@@ -496,7 +469,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Performance monitoring
   if (typeof performance !== 'undefined') {
     window.addEventListener('load', () => {
       const perfData = performance.getEntriesByType('navigation')[0];

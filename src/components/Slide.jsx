@@ -42,10 +42,8 @@ export default function Slide({ slide, isActive, index }) {
 
   const isSettlementSlide = slide.type === 'settlement';
   
-  // Слайды с малым количеством информации - центрируем и делаем жирнее
   const isSimpleSlide = slide.type === 'cover' || slide.type === 'info-cards';
   
-  // Слайды, которые нужно исправить на мобильных (заголовок не должен перекрывать значок автора)
   const needsMobileFix = [
     'geography',
     'natural-conditions',

@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
 
-/**
- * Хук для определения типа устройства
- * @returns {Object} { isMobile, isTablet, isDesktop, deviceType }
- */
 export function useDeviceType() {
   const [deviceType, setDeviceType] = useState(() => {
-    // Начальное определение на сервере или при первой загрузке
     if (typeof window === 'undefined') {
       return { isMobile: false, isTablet: false, isDesktop: true, deviceType: 'desktop' };
     }

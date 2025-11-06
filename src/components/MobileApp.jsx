@@ -1,4 +1,3 @@
-// Версия приложения для мобильных устройств
 import { useState, useEffect, useCallback } from 'react';
 import Topbar from './Topbar';
 import SlideContainer from './SlideContainer';

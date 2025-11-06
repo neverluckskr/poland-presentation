@@ -142,9 +142,7 @@
   }
 }
 
-/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
-  /* Improve touch targets for interactive whiteboards */
   button, 
   [role="button"],
   .cursor-pointer {
@@ -152,7 +150,6 @@
     min-width: 44px;
   }
   
-  /* Prevent accidental text selection on touch */
   * {
     -webkit-tap-highlight-color: rgba(239, 68, 68, 0.3);
     -webkit-touch-callout: none;
@@ -160,51 +157,37 @@
     -webkit-user-select: none;
   }
   
-  /* Allow text selection in specific contexts */
   p, span, li, h1, h2, h3, h4, h5, h6 {
     user-select: text;
     -webkit-user-select: text;
   }
 }
 
-/* Touch active state for interactive elements */
 .touch-active {
   border-color: rgba(239, 68, 68, 0.8) !important;
   background-color: rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 0 40px rgba(239,68,68,0.2), 0 0 60px rgba(239,68,68,0.3) !important;
 }
 
-/* Improve touch manipulation */
 .touch-manipulation {
   touch-action: manipulation;
   -webkit-touch-callout: none;
 }
 
-/* Swipe gestures for slides */
 .touch-pan-y {
   touch-action: pan-y;
 }
 
-/* ============================================
-   МОБИЛЬНЫЕ УСТРОЙСТВА (max-width: 768px)
-   Здесь меняй стили только для телефонов
-   ============================================ */
-
-/* Enable scrolling on mobile for slides with lots of content */
 @media screen and (max-width: 768px) {
-  /* Контент слайда сдвигаем вниз и влево, чтобы не перекрывался иконкой автора */
-  /* Иконка автора остается на месте (absolute top-2 right-2), а контент сдвигается */
   article {
     padding-top: 3rem !important;
     padding-right: 3.5rem !important;
   }
   
-  /* Для простых слайдов (cover, info-cards) уменьшаем отступ сверху */
   article[data-simple-slide="true"] {
     padding-top: 1.5rem !important;
   }
   
-  /* Only slides with scrollable content (not simple slides) need scrolling */
   article:not([data-simple-slide="true"]) {
     -webkit-overflow-scrolling: touch !important;
     overflow-y: auto !important;
@@ -214,7 +197,6 @@
     padding-bottom: 0.5rem !important;
   }
   
-  /* Make content more compact on mobile for scrollable slides */
   article:not([data-simple-slide="true"]) h2 {
     margin-bottom: 0.75rem !important;
   }
@@ -232,16 +214,6 @@
     gap: 0.5rem !important;
   }
   
-  /* ============================================
-     ИСПРАВЛЕНИЕ ПЕРЕКРЫТИЯ ЗАГОЛОВКА ЗНАЧКОМ АВТОРА
-     Для конкретных слайдов на мобильных устройствах
-     ============================================ */
-  
-  /* Географічне положення, Природні умови, Природні ресурси, 
-     Демографія, Державний лад, Первинний сектор, Вторинний сектор, 
-     Ключові сектори послуг, Цікаві факти */
-  
-  /* Уменьшаем размер заголовка и сдвигаем влево только для нужных слайдов */
   article[data-mobile-fix="true"] h2 {
     font-size: 1.25rem !important;
     padding-right: 3rem !important;
@@ -251,25 +223,21 @@
     margin-bottom: 0.5rem !important;
   }
   
-  /* Подвинуть контент вниз */
   article[data-mobile-fix="true"] > div {
     margin-top: 0.75rem !important;
   }
   
-  /* Дополнительный отступ для слайда "Первинний сектор" чтобы контент был ниже */
   article[data-mobile-fix="true"] > div > div {
     margin-top: 0.5rem !important;
   }
 }
 
-/* Prevent text selection during swipe */
 [role="main"] {
   -webkit-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Video slide optimization - HUGE title, centered video, description right under */
 .video-slide-container {
   display: flex;
   flex-direction: column;
@@ -307,7 +275,6 @@
   }
 }
 
-/* Extra small phones - use viewport width for maximum size */
 @media screen and (max-width: 390px) {
   .video-slide-title {
     font-size: 22vw !important;
@@ -317,11 +284,6 @@
   }
 }
 
-/* ============================================
-   КОМПЬЮТЕРЫ (min-width: 769px)
-   Здесь меняй стили только для компьютеров
-   ============================================ */
-
 @media screen and (min-width: 769px) {
   .video-slide-title {
     font-size: 3.5rem !important;
@@ -330,23 +292,18 @@
   }
 }
 
-/* iPhone 14 Optimizations */
-/* iPhone 14 (390px) and iPhone 14 Pro (393px) */
 @media screen and (max-width: 430px) and (max-height: 932px) {
-  /* Optimize slide padding for iPhone */
   article {
     padding: 0.75rem !important;
     gap: 0.5rem !important;
   }
   
-  /* Smaller headings - but NOT video slide title */
   h2:not(.video-slide-title) {
     font-size: 1.5rem !important;
     line-height: 1.2 !important;
     margin-bottom: 0.5rem !important;
   }
   
-  /* Keep video slide title huge */
   .video-slide-title {
     font-size: 22vw !important;
     line-height: 0.85 !important;
@@ -359,36 +316,30 @@
     margin-bottom: 0.5rem !important;
   }
   
-  /* Smaller text */
   p, li, span {
     font-size: 0.8125rem !important;
     line-height: 1.35 !important;
   }
   
-  /* Compact cards */
   [class*="bg-white/6"] {
     padding: 0.625rem !important;
     margin-bottom: 0.375rem !important;
   }
   
-  /* Compact topbar */
   header {
     padding: 0.375rem !important;
     font-size: 0.6875rem !important;
   }
   
-  /* Compact footer */
   footer {
     padding: 0.375rem !important;
     font-size: 0.6875rem !important;
   }
   
-  /* Better spacing for touch */
   .grid {
     gap: 0.375rem !important;
   }
   
-  /* Reduce gaps in lists */
   ul {
     gap: 0.25rem !important;
   }
@@ -398,13 +349,11 @@
     padding-bottom: 0.25rem !important;
   }
   
-  /* Safe area insets for iPhone notch */
   body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 }
 
-/* iPhone 14 Pro Max (430px) specific */
 @media screen and (min-width: 428px) and (max-width: 430px) and (max-height: 932px) {
   h2:not(.video-slide-title) {
     font-size: 1.75rem !important;
@@ -418,7 +367,6 @@
     font-size: 0.875rem !important;
   }
   
-  /* Keep video slide title huge */
   .video-slide-title {
     font-size: 7rem !important;
     line-height: 0.85 !important;
@@ -426,7 +374,6 @@
   }
 }
 
-/* Landscape iPhone optimization */
 @media screen and (max-height: 430px) and (orientation: landscape) {
   article {
     padding: 0.75rem !important;
@@ -438,7 +385,6 @@
     margin-bottom: 0.5rem !important;
   }
   
-  /* Keep video slide title huge in landscape */
   .video-slide-title {
     font-size: 6rem !important;
     font-weight: 900 !important;
@@ -459,7 +405,6 @@
   }
 }
 
-/* Prevent text size adjustment on iOS */
 @supports (-webkit-touch-callout: none) {
   html {
     -webkit-text-size-adjust: 100%;
@@ -472,7 +417,6 @@
   }
 }
 
-/* Safe area support for iPhone X and newer */
 @supports (padding: max(0px)) {
   body {
     padding-left: max(0px, env(safe-area-inset-left));

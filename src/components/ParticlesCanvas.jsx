@@ -38,7 +38,6 @@ export default function ParticlesCanvas() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Функція для малювання красивої сніжинки
     const drawSnowflake = (ctx, size, branches = 6) => {
       ctx.strokeStyle = `rgba(255, 255, 255, ${0.8})`;
       ctx.lineWidth = size * 0.15;
@@ -50,7 +49,6 @@ export default function ParticlesCanvas() {
         ctx.lineTo(0, -size);
         ctx.stroke();
         
-        // Маленькі гілки
         ctx.beginPath();
         ctx.moveTo(0, -size * 0.5);
         ctx.lineTo(-size * 0.3, -size * 0.7);
@@ -111,13 +109,11 @@ export default function ParticlesCanvas() {
         ctx.globalAlpha = this.opacity;
         
         if (isLowPerformance || this.size < 4) {
-          // Для маленьких сніжинок або слабких ПК - простий круг
           ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
           ctx.beginPath();
           ctx.arc(0, 0, this.size * 0.6, 0, Math.PI * 2);
           ctx.fill();
         } else {
-          // Для великих сніжинок - красива форма
           drawSnowflake(ctx, this.size, this.branches);
         }
         
