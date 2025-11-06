@@ -53,6 +53,7 @@ export default function Slide({ slide, isActive, index }) {
     'demographics',
     'governance',
     'structure',
+    'primary-sector',
     'secondary-sector',
     'services-detail',
     'facts'
