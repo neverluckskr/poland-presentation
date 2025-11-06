@@ -127,7 +127,11 @@ function App() {
           />
         </main>
 
-        <Footer currentSlide={currentSlide} totalSlides={slidesData.length} />
+        <Footer 
+          currentSlide={currentSlide} 
+          totalSlides={slidesData.length}
+          onToggleFullscreen={toggleFullscreen}
+        />
       </div>
       <ToastContainer />
     </>
