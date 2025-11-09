@@ -11,12 +11,12 @@ const VARIANT_CONFIG = {
     containerClassName: 'desktop-version',
     mainClassName:
       'flex-1 px-3 sm:px-5 lg:px-8 py-2 sm:py-4 flex items-center justify-center overflow-hidden relative',
-    ariaLabel: 'Презентація про Республіку Польща (Десктопна версія)',
+    ariaLabel: 'Презентация о Республике Польша (настольная версия)',
   },
   mobile: {
     containerClassName: 'mobile-version',
     mainClassName: 'flex-1 px-2 py-2 flex items-center justify-center overflow-hidden relative',
-    ariaLabel: 'Презентація про Республіку Польща (Мобільна версія)',
+    ariaLabel: 'Презентация о Республике Польша (мобильная версия)',
   },
 };
 
@@ -51,7 +51,7 @@ export default function PresentationLayout({
         <main
           className={`${config.mainClassName} transition-all duration-500`}
           role="main"
-          aria-label="Основний вміст презентації"
+          aria-label="Основной контент презентации"
         >
           <div className="w-full h-full flex items-center justify-center">
             <SlideContainer {...slideContainerProps} />

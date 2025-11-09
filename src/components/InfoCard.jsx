@@ -27,7 +27,7 @@ export default function InfoCard({ card, isActive, onClick }) {
       }}
       tabIndex={0}
       role="button"
-      aria-label={`Картка: ${card.label}`}
+      aria-label={`Карточка: ${card.label}`}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full group-focus:translate-x-full transition-transform duration-800" />
       <strong className="block text-[10px] xs:text-xs sm:text-sm md:text-base text-primary mb-0.5 sm:mb-1 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">

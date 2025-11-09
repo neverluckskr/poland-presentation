@@ -5,7 +5,7 @@ export default function PrimarySectorSlide({ slide }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-9 items-center">
         <div className="grid gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-2 sm:mb-3">⛏️ Видобувна промисловість</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-2 sm:mb-3">⛏️ Добывающая промышленность</h3>
             <p className="text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed mb-2 sm:mb-3 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.mining[0]}</p>
             <ul className="text-xs xs:text-sm sm:text-base list-none">
               {slide.content.mining.slice(1).map((item, index) => (
@@ -18,8 +18,8 @@ export default function PrimarySectorSlide({ slide }) {
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-2 sm:mb-3">🌾 Сільське господарство</h3>
-            <h4 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 sm:mb-2">Рослинництво:</h4>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-2 sm:mb-3">🌾 Сельское хозяйство</h3>
+            <h4 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 sm:mb-2">Растениеводство:</h4>
             <ul className="text-xs xs:text-sm sm:text-base mb-2 sm:mb-3 md:mb-4 list-none">
               {slide.content.agriculture.crops.map((crop, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -28,7 +28,7 @@ export default function PrimarySectorSlide({ slide }) {
                 </li>
               ))}
             </ul>
-            <h4 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 sm:mb-2">Тваринництво:</h4>
+            <h4 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 sm:mb-2">Животноводство:</h4>
             <ul className="text-xs xs:text-sm sm:text-base list-none">
               {slide.content.agriculture.livestock.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -39,7 +39,7 @@ export default function PrimarySectorSlide({ slide }) {
             </ul>
             
             <div className="bg-white/6 p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl border border-dark-border mt-2 sm:mt-3 md:mt-4">
-              <strong className="text-xs xs:text-sm sm:text-base text-primary block mb-0.5 sm:mb-1">📦 Експорт</strong>
+              <strong className="text-xs xs:text-sm sm:text-base text-primary block mb-0.5 sm:mb-1">📦 Экспорт</strong>
               <span className="text-xs xs:text-sm sm:text-base transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.export}</span>
             </div>
           </div>

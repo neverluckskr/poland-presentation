@@ -5,12 +5,12 @@ export default function ServicesDetailSlide({ slide }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-9 items-center">
         <div className="grid gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           <div className="bg-primary/12 border border-primary/40 p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl">
-            <strong className="text-xs xs:text-sm sm:text-base text-primary block mb-0.5 sm:mb-1">🏦 Фінансовий сектор</strong>
+            <strong className="text-xs xs:text-sm sm:text-base text-primary block mb-0.5 sm:mb-1">🏦 Финансовый сектор</strong>
             <span className="text-xs xs:text-sm sm:text-base md:text-lg transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.financial}</span>
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🚛 Транспорт і логістика</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🚛 Транспорт и логистика</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.transport.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -22,7 +22,7 @@ export default function ServicesDetailSlide({ slide }) {
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">💻 ІТ-сфера</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">💻 ИТ-сфера</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.it.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">

@@ -5,7 +5,7 @@ export default function SettlementSlide({ slide }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-9 items-center">
         <div className="order-2 grid gap-4 sm:gap-5 md:gap-6 lg:gap-9">
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-center">Найбільші міста</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-center">Крупнейшие города</h3>
             <ul className="columns-1 sm:columns-2 gap-3 sm:gap-5 md:gap-7 lg:gap-10 text-xs xs:text-sm sm:text-base md:text-lg lg:text-2xl list-none">
               {slide.content.cities.map((city, index) => (
                 <li key={index} className="pl-6 xs:pl-8 sm:pl-10 py-1.5 xs:py-2 sm:py-3 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -17,7 +17,7 @@ export default function SettlementSlide({ slide }) {
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-center">Українська діаспора</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-center">Украинская диаспора</h3>
             <div className="grid grid-cols-2 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
               {slide.content.diaspora.map((item, index) => (
                 <div 

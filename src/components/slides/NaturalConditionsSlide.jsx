@@ -5,12 +5,12 @@ export default function NaturalConditionsSlide({ slide }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-9 items-center">
         <div className="grid gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌡️ Клімат</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌡️ Климат</h3>
             <p className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.climate}</p>
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">⛰️ Рельєф</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">⛰️ Рельеф</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.relief.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -22,7 +22,7 @@ export default function NaturalConditionsSlide({ slide }) {
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌊 Річки</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌊 Реки</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.rivers.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">

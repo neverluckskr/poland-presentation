@@ -1039,7 +1039,7 @@ main {
   animation: progressShine 2.5s infinite;
 }
 
-/* Режим оптимізації для слабких комп'ютерів */
+/* Режим оптимизации для слабых компьютеров */
 body.performance-mode * {
   animation-duration: 0s !important;
   transition-duration: 0.2s !important;
@@ -1164,7 +1164,7 @@ body:not(.fullscreen-mode) .slides-viewport {
   max-width: 1200px;
 }
 
-/* Оптимізація зображень */
+/* Оптимизация изображений */
 img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;

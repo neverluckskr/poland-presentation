@@ -90,7 +90,7 @@ export default function Slide({ slide, isActive, index }) {
             ? 'bg-[#8B0000] border-[#3a0000] text-white shadow-[0_0_20px_rgba(139,0,0,0.8),inset_0_0_15px_rgba(90,0,0,0.5),0_0_0_2px_rgba(58,0,0,0.8)] ring-2 ring-[#5a0000]/50'
             : 'bg-white border-black text-black'
         }`}
-        aria-label={`Автор слайду: ${slide.author}`}
+        aria-label={`Автор слайда: ${slide.author}`}
         title={`Автор: ${slide.author}`}
       >
         {slide.author}

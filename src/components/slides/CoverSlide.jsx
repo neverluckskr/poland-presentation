@@ -13,18 +13,18 @@ export default function CoverSlide({ slide, isActive }) {
         </h2>
 
         <div className="text-center mt-6 xs:mt-8 sm:mt-10 md:mt-12">
-          <p className="text-lg xs:text-xl sm:text-2xl md:text-xl font-black md:font-bold mb-1 xs:mb-2">Презентацію розробив:</p>
+          <p className="text-lg xs:text-xl sm:text-2xl md:text-xl font-black md:font-bold mb-1 xs:mb-2">Презентацию подготовил:</p>
           <p className="mt-1 xs:mt-2 text-base xs:text-lg sm:text-xl md:text-lg font-bold md:font-normal opacity-95">{slide.content.developer}</p>
 
           <hr className="w-3/5 mx-auto my-4 xs:my-6 sm:my-8 border-none border-t-2 border-white/25 rounded-full" aria-hidden="true" />
 
-          <p className="text-lg xs:text-xl sm:text-2xl md:text-xl font-black md:font-bold mb-1 xs:mb-2">Матеріали підготували:</p>
+          <p className="text-lg xs:text-xl sm:text-2xl md:text-xl font-black md:font-bold mb-1 xs:mb-2">Материалы подготовили:</p>
           <p className="mt-1 xs:mt-2 text-xs xs:text-sm sm:text-base md:text-base font-semibold md:font-normal opacity-95 leading-tight">{slide.content.materials}</p>
 
           <p className="mt-4 xs:mt-6 sm:mt-8 text-4xl xs:text-5xl sm:text-6xl" style={{ animation: 'heartBeat 1.5s ease-in-out infinite' }} aria-hidden="true">♥</p>
 
           <p className="mt-3 xs:mt-4 sm:mt-5 text-xs xs:text-sm sm:text-base opacity-80">
-            Усі матеріали підготовлено на основі відкритих та офіційних інтернет-джерел.
+            Все материалы собраны на основе открытых и официальных интернет-источников.
           </p>
         </div>
       </div>

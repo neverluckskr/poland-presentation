@@ -67,7 +67,7 @@ export default function SlideContainer({ slides, currentIndex, onSlideClick, isG
     <div
       className="w-full max-w-7xl h-full relative perspective-2000 touch-pan-y"
       role="region"
-      aria-label="Контейнер слайдів презентації"
+      aria-label="Контейнер слайдов презентации"
       aria-live="polite"
       aria-atomic="true"
       onTouchStart={handleTouchStart}

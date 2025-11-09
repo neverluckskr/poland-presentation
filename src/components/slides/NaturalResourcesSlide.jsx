@@ -5,7 +5,7 @@ export default function NaturalResourcesSlide({ slide }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:gap-9 items-center">
         <div className="order-2 grid gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">⛏️ Мінеральні ресурси</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">⛏️ Минеральные ресурсы</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.mineral.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -17,7 +17,7 @@ export default function NaturalResourcesSlide({ slide }) {
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌲 Лісові ресурси</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌲 Лесные ресурсы</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.forest.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -29,7 +29,7 @@ export default function NaturalResourcesSlide({ slide }) {
           </div>
           
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌾 Земельні ресурси</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3">🌾 Земельные ресурсы</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.land.map((item, index) => (
                 <li key={index} className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">
@@ -41,7 +41,7 @@ export default function NaturalResourcesSlide({ slide }) {
           </div>
           
           <div className="bg-white/6 p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl border border-dark-border">
-            <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-primary block mb-0.5 sm:mb-1">🏖️ Рекреаційні ресурси</strong>
+            <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-primary block mb-0.5 sm:mb-1">🏖️ Рекреационные ресурсы</strong>
             <span className="text-xs xs:text-sm sm:text-base md:text-lg transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.recreational}</span>
           </div>
         </div>

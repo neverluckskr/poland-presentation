@@ -6,7 +6,7 @@ export default function SecondarySectorSlide({ slide }) {
         <div>
           <p className="text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed mb-2 sm:mb-3 md:mb-4 transition-all duration-300 hover:text-primary hover:font-semibold">{slide.content.description}</p>
           <div>
-            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-1.5 sm:mb-2 md:mb-3">Основні галузі</h3>
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl text-primary mb-1.5 sm:mb-2 md:mb-3">Основные отрасли</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
               {slide.content.industries.map((industry, index) => {
                 const parts = industry.split(':');

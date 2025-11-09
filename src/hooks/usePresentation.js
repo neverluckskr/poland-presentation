@@ -11,7 +11,7 @@ function readPreferences() {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     return raw ? JSON.parse(raw) : {};
   } catch (error) {
-    console.warn('Не вдалося зчитати налаштування презентації з localStorage', error);
+    console.warn('Не удалось прочитать настройки презентации из localStorage', error);
     return {};
   }
 }
@@ -24,7 +24,7 @@ function writePreferences(preferences) {
   try {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences));
   } catch (error) {
-    console.warn('Не вдалося зберегти налаштування презентації до localStorage', error);
+    console.warn('Не удалось сохранить настройки презентации в localStorage', error);
   }
 }
 

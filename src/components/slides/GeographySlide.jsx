@@ -8,7 +8,7 @@ export default function GeographySlide({ slide }) {
           
           <div className="grid gap-3 sm:gap-4 md:gap-5 lg:gap-7">
             <div>
-              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4">🗺️ Сусідні країни</h3>
+              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4">🗺️ Соседние страны</h3>
               <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl columns-1 sm:columns-2 gap-2 sm:gap-4 md:gap-6 lg:gap-8 list-none">
                 {slide.content.neighbors.map((country, index) => (
               <li key={index} className="pl-6 xs:pl-8 sm:pl-10 py-1.5 xs:py-2 sm:py-3 relative transition-all duration-300 hover:translate-x-2 hover:text-primary hover:font-semibold">
@@ -20,17 +20,17 @@ export default function GeographySlide({ slide }) {
             </div>
             
             <div>
-              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4">💧 Водні ресурси</h3>
+              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-3 md:mb-4">💧 Водные ресурсы</h3>
             <ul className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl list-none">
               <li className="py-1 sm:py-1.5 transition-all duration-300 hover:text-primary hover:font-semibold"><strong>Море:</strong> {slide.content.water.sea}</li>
-              <li className="py-1 sm:py-1.5 transition-all duration-300 hover:text-primary hover:font-semibold"><strong>Основні порти:</strong> {slide.content.water.ports}</li>
-              <li className="py-1 sm:py-1.5 transition-all duration-300 hover:text-primary hover:font-semibold"><strong>Головні річки:</strong> {slide.content.water.rivers}</li>
+              <li className="py-1 sm:py-1.5 transition-all duration-300 hover:text-primary hover:font-semibold"><strong>Основные порты:</strong> {slide.content.water.ports}</li>
+              <li className="py-1 sm:py-1.5 transition-all duration-300 hover:text-primary hover:font-semibold"><strong>Главные реки:</strong> {slide.content.water.rivers}</li>
             </ul>
             </div>
             
             <div className="bg-primary/12 p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl border border-primary/40">
-              <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-primary block mb-1 sm:mb-2">🚛 Транзитний центр Європи</strong>
-              <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-semibold">Стратегічне положення між Західною і Східною Європою</span>
+              <strong className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl text-primary block mb-1 sm:mb-2">🚛 Транзитный центр Европы</strong>
+              <span className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-semibold">Стратегическое положение между Западной и Восточной Европой</span>
             </div>
           </div>
         </div>

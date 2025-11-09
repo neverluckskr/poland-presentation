@@ -24,11 +24,11 @@ export default function VideoSlide({ slide }) {
 
       {embedUrl ? (
         <div className="video-wrapper w-full max-w-sm md:max-w-4xl lg:max-w-6xl mx-auto flex-shrink-0">
-          <div 
-            className="aspect-video rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden border-2 md:border-3 border-dark-border shadow-2xl" 
+          <div
+            className="aspect-video rounded-lg md:rounded-xl lg:rounded-2xl overflow-hidden border-2 md:border-3 border-dark-border shadow-2xl"
             style={{ boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 107, 122, 0.3)' }}
             role="region"
-            aria-label="YouTube відео"
+            aria-label="Видео YouTube"
           >
             <iframe
               width="100%"
@@ -40,13 +40,13 @@ export default function VideoSlide({ slide }) {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               className="w-full h-full"
-              aria-label={`YouTube відео: ${slide.title}`}
+              aria-label={`Видео YouTube: ${slide.title}`}
             />
           </div>
         </div>
       ) : (
         <div className="text-center text-2xl text-gray-400" role="alert">
-          <p>Відео не знайдено</p>
+          <p>Видео не найдено</p>
           {slide.content?.videoUrl && <p className="text-lg mt-4 opacity-70">{slide.content.videoUrl}</p>}
         </div>
       )}

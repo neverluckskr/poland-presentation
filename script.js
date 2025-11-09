@@ -234,18 +234,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function showNext() {
     if (currentIndex < slides.length - 1) {
       showSlide(currentIndex + 1);
-      showToast('Наступний слайд', 'info');
+      showToast('Следующий слайд', 'info');
     } else {
-      showToast('Це останній слайд', 'warning');
+      showToast('Это последний слайд', 'warning');
     }
   }
 
   function showPrev() {
     if (currentIndex > 0) {
       showSlide(currentIndex - 1);
-      showToast('Попередній слайд', 'info');
+      showToast('Предыдущий слайд', 'info');
     } else {
-      showToast('Це перший слайд', 'warning');
+      showToast('Это первый слайд', 'warning');
     }
   }
 
@@ -283,14 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
         thumb.addEventListener('click', () => {
           showSlide(index);
           toggleGrid();
-          showToast(`Перехід до слайду ${index + 1}`, 'success');
+          showToast(`Переход к слайду ${index + 1}`, 'success');
         });
         
         grid.appendChild(thumb);
       });
       grid.classList.remove('hidden');
       slidesSection.style.display = 'none';
-      showToast('Режим огляду слайдів', 'info');
+      showToast('Режим обзора слайдов', 'info');
     } else {
       grid.classList.add('hidden');
       slidesSection.style.display = 'block';
@@ -300,11 +300,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleFullscreen() {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().then(() => {
-        showToast('Повноекранний режим увімкнено', 'success');
+        showToast('Полноэкранный режим включён', 'success');
       });
     } else {
       document.exitFullscreen().then(() => {
-        showToast('Повноекранний режим вимкнено', 'info');
+        showToast('Полноэкранный режим выключен', 'info');
       });
     }
   }
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleTheme() {
     isDarkTheme = !isDarkTheme;
     document.body.classList.toggle('light-theme', !isDarkTheme);
-    showToast(isDarkTheme ? 'Темна тема' : 'Світла тема', 'success');
+    showToast(isDarkTheme ? 'Тёмная тема' : 'Светлая тема', 'success');
   }
 
   function toggleAutoPlay() {
@@ -326,10 +326,10 @@ document.addEventListener('DOMContentLoaded', () => {
           showSlide(0);
         }
       }, 5000);
-      showToast('Автоперегляд увімкнено', 'success');
+      showToast('Автопросмотр включён', 'success');
     } else {
       clearInterval(autoPlayInterval);
-      showToast('Автоперегляд вимкнено', 'info');
+      showToast('Автопросмотр выключен', 'info');
     }
   }
 
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fullscreenBtn.addEventListener('click', toggleFullscreen);
   themeBtn.addEventListener('click', toggleTheme);
   printBtn.addEventListener('click', () => {
-    showToast('Підготовка до друку...', 'info');
+    showToast('Подготовка к печати...', 'info');
     setTimeout(() => window.print(), 500);
   });
 
@@ -375,12 +375,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Home') {
       e.preventDefault();
       showSlide(0);
-      showToast('Перехід до першого слайду', 'info');
+      showToast('Переход к первому слайду', 'info');
     }
     if (e.key === 'End') {
       e.preventDefault();
       showSlide(slides.length - 1);
-      showToast('Перехід до останнього слайду', 'info');
+      showToast('Переход к последнему слайду', 'info');
     }
     if (e.key === 'Escape' && isGridView) {
       toggleGrid();
@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   setTimeout(() => {
-    showToast('🇵🇱 Ласкаво просимо до презентації про Польщу!', 'success');
+    showToast('🇵🇱 Добро пожаловать на презентацию о Польше!', 'success');
   }, 1500);
 
   const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
@@ -460,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === konamiCode[konamiIndex]) {
       konamiIndex++;
       if (konamiIndex === konamiCode.length) {
-        showToast('🎉 Ви знайшли секретний код! Автоперегляд активовано!', 'success');
+        showToast('🎉 Вы нашли секретный код! Автопросмотр активирован!', 'success');
         toggleAutoPlay();
         konamiIndex = 0;
       }
@@ -471,8 +471,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typeof performance !== 'undefined') {
     window.addEventListener('load', () => {
-      const perfData = performance.getEntriesByType('navigation')[0];
-      console.log(`⚡ Час завантаження: ${perfData.loadEventEnd - perfData.fetchStart}ms`);
+        const perfData = performance.getEntriesByType('navigation')[0];
+        console.log(`⚡ Время загрузки: ${perfData.loadEventEnd - perfData.fetchStart}ms`);
     });
   }
 });

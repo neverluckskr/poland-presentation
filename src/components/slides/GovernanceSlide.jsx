@@ -9,22 +9,22 @@ export default function GovernanceSlide({ slide, isActive }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 items-center">
           <div className="grid gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             <div className="bg-primary/12 border-2 border-primary/45 text-center p-2 xs:p-3 sm:p-4 rounded-lg sm:rounded-xl md:rounded-2xl">
-              <strong className="text-xs xs:text-sm sm:text-base md:text-lg text-primary block mb-0.5 sm:mb-1">🇵🇱 Форма державного устрою</strong>
-              <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-black block mt-0.5 sm:mt-1">Унітарна держава</span>
+              <strong className="text-xs xs:text-sm sm:text-base md:text-lg text-primary block mb-0.5 sm:mb-1">🇵🇱 Форма государственного устройства</strong>
+              <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-black block mt-0.5 sm:mt-1">{slide.content.form}</span>
             </div>
-            
+
             <div>
-              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-2.5">Що таке унітарна держава?</h3>
+              <h3 className="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary mb-2 sm:mb-2.5">Что такое унитарное государство?</h3>
               <ul className="text-xs xs:text-sm sm:text-base md:text-lg list-none">
-                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Єдина система влади на всій території</li>
-                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Централізоване управління</li>
-                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Адміністративні одиниці підпорядковані центру</li>
-                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Єдина конституція та законодавство</li>
+                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Единая система власти на всей территории</li>
+                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Централизованное управление</li>
+                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Административные единицы подчинены центру</li>
+                <li className="pl-4 xs:pl-5 sm:pl-6 py-1 xs:py-1.5 sm:py-2 relative transition-all duration-300 hover:text-primary hover:font-semibold">• Единая конституция и законодательство</li>
               </ul>
             </div>
-            
+
             <div>
-              <h3 className="text-2xl sm:text-3xl text-primary mb-2.5">📍 Адміністративний поділ</h3>
+              <h3 className="text-2xl sm:text-3xl text-primary mb-2.5">📍 Административное деление</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {slide.content.divisions.map((div, index) => (
                   <div 
@@ -83,9 +83,9 @@ export default function GovernanceSlide({ slide, isActive }) {
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4 sm:gap-6">
             <div className="bg-primary/12 border-2 border-primary/45 p-3 xs:p-4 sm:p-5 md:p-7 rounded-lg sm:rounded-xl md:rounded-2xl col-span-full">
-              <h3 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 xs:mb-1.5 sm:mb-2">🏛️ Форма правління</h3>
+              <h3 className="text-xs xs:text-sm sm:text-base md:text-lg text-primary mb-1 xs:mb-1.5 sm:mb-2">🏛️ Форма правления</h3>
               <p className="text-base xs:text-lg sm:text-xl md:text-2xl font-extrabold mb-1 xs:mb-1.5 sm:mb-2">{slide.content.form}</p>
-              <p className="text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed opacity-95 transition-all duration-300 hover:text-primary hover:font-semibold">Змішана система з розподілом влади між президентом, урядом та парламентом.</p>
+              <p className="text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed opacity-95 transition-all duration-300 hover:text-primary hover:font-semibold">Смешанная система с разделением полномочий между президентом, правительством и парламентом.</p>
             </div>
             
             <div 
@@ -104,13 +104,13 @@ export default function GovernanceSlide({ slide, isActive }) {
               }}
               tabIndex={0}
               role="button"
-              aria-label="Глава держави"
+              aria-label="Глава государства"
             >
-              <h3 className="text-base sm:text-lg text-primary mb-2">👤 Глава держави</h3>
+              <h3 className="text-base sm:text-lg text-primary mb-2">👤 Глава государства</h3>
               <p className="text-base sm:text-lg leading-relaxed opacity-95 transition-all duration-300 hover:text-primary hover:font-semibold">Президент — {slide.content.president}</p>
             </div>
-            
-            <div 
+
+            <div
               className="bg-white/6 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-dark-border transition-all duration-300 cursor-pointer touch-manipulation active:scale-95 hover:border-primary/80 hover:bg-white/10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(239,68,68,0.2),0_0_60px_rgba(239,68,68,0.3)] focus:border-primary/80 focus:bg-white/10 focus:shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(239,68,68,0.2),0_0_60px_rgba(239,68,68,0.3)]"
               onTouchStart={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.8)';
@@ -126,13 +126,13 @@ export default function GovernanceSlide({ slide, isActive }) {
               }}
               tabIndex={0}
               role="button"
-              aria-label="Виконавча влада"
+              aria-label="Исполнительная власть"
             >
-              <h3 className="text-base sm:text-lg text-primary mb-2">🏢 Виконавча влада</h3>
-              <p className="text-base sm:text-lg leading-relaxed opacity-95">Уряд на чолі з прем'єр-міністром.</p>
+              <h3 className="text-base sm:text-lg text-primary mb-2">🏢 Исполнительная власть</h3>
+              <p className="text-base sm:text-lg leading-relaxed opacity-95">Правительство во главе с премьер-министром.</p>
             </div>
-            
-            <div 
+
+            <div
               className="bg-white/6 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-dark-border transition-all duration-300 cursor-pointer touch-manipulation active:scale-95 hover:border-primary/80 hover:bg-white/10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(239,68,68,0.2),0_0_60px_rgba(239,68,68,0.3)] focus:border-primary/80 focus:bg-white/10 focus:shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(239,68,68,0.2),0_0_60px_rgba(239,68,68,0.3)]"
               onTouchStart={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.8)';
@@ -153,8 +153,8 @@ export default function GovernanceSlide({ slide, isActive }) {
               <h3 className="text-base sm:text-lg text-primary mb-2">📜 Сейм</h3>
               <p className="text-base sm:text-lg leading-relaxed opacity-95">{slide.content.sejm}</p>
             </div>
-            
-            <div 
+
+            <div
               className="bg-white/6 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-dark-border transition-all duration-300 cursor-pointer touch-manipulation active:scale-95 hover:border-primary/80 hover:bg-white/10 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(239,68,68,0.2),0_0_60px_rgba(239,68,68,0.3)] focus:border-primary/80 focus:bg-white/10 focus:shadow-[0_20px_40px_rgba(0,0,0,0.4),inset_0_0_40px_rgba(239,68,68,0.2),0_0_60px_rgba(239,68,68,0.3)]"
               onTouchStart={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.8)';

@@ -21,7 +21,7 @@ export default function Topbar({
     <header
       className="glass border-b border-dark-border px-2 sm:px-3 md:px-5 py-2 sm:py-3 md:py-3.5 flex flex-col sm:flex-row items-center justify-between relative overflow-hidden gap-2 sm:gap-0 z-20"
       role="banner"
-      aria-label="Навігація презентації"
+      aria-label="Навигация по презентации"
     >
       <div className="flex items-center gap-2 sm:gap-3.5 group relative z-10">
         <svg 
@@ -35,7 +35,7 @@ export default function Topbar({
           <path fill="#dc143c" d="M0 7.5h24v7.5H0z"/>
         </svg>
         <span className="font-extrabold text-sm sm:text-base md:text-lg tracking-wide transition-all duration-300 group-hover:text-primary group-hover:scale-105" style={{ animation: 'textGlow 3s ease-in-out infinite' }}>
-          <span className="hidden sm:inline">Презентація: </span>Польща
+          <span className="hidden sm:inline">Презентация: </span>Польша
         </span>
       </div>
       
@@ -43,14 +43,14 @@ export default function Topbar({
         developed by antisocial club簡単ランク
       </div>
 
-      <nav className="flex items-center gap-1 sm:gap-2 relative z-10 flex-wrap justify-center" role="navigation" aria-label="Управління презентацією">
-        <IconButton onClick={onPrev} disabled={currentSlide === 0} ariaLabel="Попередній слайд">
+      <nav className="flex items-center gap-1 sm:gap-2 relative z-10 flex-wrap justify-center" role="navigation" aria-label="Управление презентацией">
+        <IconButton onClick={onPrev} disabled={currentSlide === 0} ariaLabel="Предыдущий слайд">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
         </IconButton>
 
         <span 
           className="font-extrabold px-2 sm:px-3 py-1 sm:py-1.5 text-primary text-shadow-[0_0_15px_rgba(239,68,68,0.7)] bg-primary/10 rounded-lg border border-primary/30 flex items-center gap-1 animate-pulse-slow text-xs sm:text-sm md:text-base"
-          aria-label={`Слайд ${currentSlide + 1} з ${totalSlides}`}
+          aria-label={`Слайд ${currentSlide + 1} из ${totalSlides}`}
           role="status"
         >
           <span>{currentSlide + 1}</span>
@@ -58,21 +58,21 @@ export default function Topbar({
           <span>{totalSlides}</span>
         </span>
 
-        <IconButton onClick={onNext} disabled={currentSlide === totalSlides - 1} ariaLabel="Наступний слайд">
+        <IconButton onClick={onNext} disabled={currentSlide === totalSlides - 1} ariaLabel="Следующий слайд">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
         </IconButton>
 
         <div className="w-px h-4 sm:h-6 bg-dark-border mx-0.5 sm:mx-1" aria-hidden="true" />
 
-        <IconButton onClick={onToggleGrid} ariaLabel="Огляд слайдів" isActive={isGridView}>
+        <IconButton onClick={onToggleGrid} ariaLabel="Обзор слайдов" isActive={isGridView}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 8.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6A2.25 2.25 0 0115.75 3.75h2.25A2.25 2.25 0 0120.25 6v2.25a2.25 2.25 0 01-2.25 2.25H15.75A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
         </IconButton>
 
-        <IconButton onClick={onToggleFullscreen} ariaLabel="Повноекранний режим" isActive={isFullscreen}>
+        <IconButton onClick={onToggleFullscreen} ariaLabel="Полноэкранный режим" isActive={isFullscreen}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/>
         </IconButton>
 
-        <IconButton onClick={onToggleTheme} ariaLabel="Змінити тему" isActive={!isDarkTheme}>
+        <IconButton onClick={onToggleTheme} ariaLabel="Сменить тему" isActive={!isDarkTheme}>
           {isDarkTheme ? (
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
           ) : (
