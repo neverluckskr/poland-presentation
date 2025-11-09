@@ -1,4 +1,4 @@
-export default function IconButton({ onClick, disabled, ariaLabel, children }) {
+export default function IconButton({ onClick, disabled, ariaLabel, children, isActive = false }) {
   return (
     <button
       onClick={onClick}
@@ -13,6 +13,7 @@ export default function IconButton({ onClick, disabled, ariaLabel, children }) {
         active:translate-y-0 active:scale-105
         disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:transform-none
         relative overflow-hidden group
+        ${isActive ? 'bg-primary/20 border-primary/60 shadow-[0_15px_35px_rgba(239,68,68,0.45)]' : ''}
       `}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-blue-500/30 opacity-0 group-hover:opacity-100 transition-opacity blur-lg" />

@@ -9,10 +9,17 @@ export default function Topbar({
   onToggleGrid,
   onToggleFullscreen,
   onToggleTheme,
+  isGridView,
+  isDarkTheme,
+  isFullscreen,
 }) {
+  const progress = totalSlides > 0
+    ? Math.min(100, Math.max(0, ((currentSlide + 1) / totalSlides) * 100))
+    : 0;
+
   return (
-    <header 
-      className="glass border-b border-dark-border px-2 sm:px-3 md:px-5 py-2 sm:py-3 md:py-3.5 flex flex-col sm:flex-row items-center justify-between relative overflow-hidden gap-2 sm:gap-0"
+    <header
+      className="glass border-b border-dark-border px-2 sm:px-3 md:px-5 py-2 sm:py-3 md:py-3.5 flex flex-col sm:flex-row items-center justify-between relative overflow-hidden gap-2 sm:gap-0 z-20"
       role="banner"
       aria-label="Навігація презентації"
     >
@@ -57,18 +64,32 @@ export default function Topbar({
 
         <div className="w-px h-4 sm:h-6 bg-dark-border mx-0.5 sm:mx-1" aria-hidden="true" />
 
-        <IconButton onClick={onToggleGrid} ariaLabel="Огляд слайдів">
+        <IconButton onClick={onToggleGrid} ariaLabel="Огляд слайдів" isActive={isGridView}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 8.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6A2.25 2.25 0 0115.75 3.75h2.25A2.25 2.25 0 0120.25 6v2.25a2.25 2.25 0 01-2.25 2.25H15.75A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
         </IconButton>
 
-        <IconButton onClick={onToggleFullscreen} ariaLabel="Повноекранний режим">
+        <IconButton onClick={onToggleFullscreen} ariaLabel="Повноекранний режим" isActive={isFullscreen}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/>
         </IconButton>
 
-        <IconButton onClick={onToggleTheme} ariaLabel="Змінити тему">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+        <IconButton onClick={onToggleTheme} ariaLabel="Змінити тему" isActive={!isDarkTheme}>
+          {isDarkTheme ? (
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+          ) : (
+            <>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.5M12 19.5V21m9-9h-1.5M4.5 12H3m15.364 6.364l-1.06-1.06M7.695 7.695l-1.06-1.06m12.728 0l-1.06 1.06M7.695 16.305l-1.06 1.06"/>
+              <circle cx="12" cy="12" r="4.5" fill="none"/>
+            </>
+          )}
         </IconButton>
       </nav>
+
+      <div className="absolute left-0 right-0 bottom-0 h-1 bg-white/5 overflow-hidden" aria-hidden="true">
+        <div
+          className="h-full bg-gradient-to-r from-primary via-amber-300 to-blue-400 transition-all duration-700 ease-out"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
     </header>
   );
 }
@@ -81,4 +102,13 @@ Topbar.propTypes = {
   onToggleGrid: PropTypes.func.isRequired,
   onToggleFullscreen: PropTypes.func.isRequired,
   onToggleTheme: PropTypes.func.isRequired,
+  isGridView: PropTypes.bool,
+  isDarkTheme: PropTypes.bool,
+  isFullscreen: PropTypes.bool,
+};
+
+Topbar.defaultProps = {
+  isGridView: false,
+  isDarkTheme: true,
+  isFullscreen: false,
 };
